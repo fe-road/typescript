@@ -3,7 +3,7 @@
     The function should receive the date of birthday as parameter in the format "MM-DD".
 */
 
-function remainingDaysUntilBirthday(birthday) {
+function remainingDaysUntilBirthdayRound1(birthday: string): number {
     // validation...
 
     const now = new Date();
@@ -25,11 +25,11 @@ function remainingDaysUntilBirthday(birthday) {
     return difference / (1000 * 60 * 60 * 24);
 }
 
-function tellRemainingDays(birthday) {
-    const remainingDays = remainingDaysUntilBirthday(birthday);
+function tellRemainingDaysRound1(birthday: string): void {
+    const remainingDays = remainingDaysUntilBirthdayRound1(birthday);
     console.log(remainingDays ? `Your birthday will arrive in ${remainingDays} days` : "Congrats! It's your birthday!");
 }
 
-tellRemainingDays('07-11');
-tellRemainingDays('02-11');
-tellRemainingDays('03-27');
+tellRemainingDaysRound1('07-11');
+tellRemainingDaysRound1('02-11');
+tellRemainingDaysRound1('03-27');

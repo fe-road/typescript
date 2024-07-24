@@ -3,12 +3,12 @@
 */
 
 // Ex. 1
-const sayHello = (name) => {
+const sayHello = (name: string): void => {
     console.log(`Hello ${name.toUpperCase()}`);
 };
 
 // Ex. 2
-const formatCurrentDate = () => {
+const formatCurrentDate = (): string => {
     const now = new Date();
 
     const date = now.getDate();
@@ -21,7 +21,7 @@ const formatCurrentDate = () => {
 };
 
 // Ex. 3
-const countConsonants = (str) => {
+const countConsonants = (str: string): number => {
     const formattedStr = str.toLowerCase()
         .replaceAll('a', '')
         .replaceAll('e', '')
@@ -33,7 +33,7 @@ const countConsonants = (str) => {
 };
 
 // Challenge 1
-const remainingDaysUntilBirthday = (birthday) => {
+const remainingDaysUntilBirthday = (birthday: string): number => {
     // validation...
 
     const now = new Date();
@@ -55,7 +55,7 @@ const remainingDaysUntilBirthday = (birthday) => {
     return difference / (1000 * 60 * 60 * 24);
 };
 
-const tellRemainingDays = (birthday) => {
+const tellRemainingDays = (birthday: string): void => {
     const remainingDays = remainingDaysUntilBirthday(birthday);
     console.log(remainingDays ? `Your birthday will arrive in ${remainingDays} days` : "Congrats! It's your birthday!");
 };

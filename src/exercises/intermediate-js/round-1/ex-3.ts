@@ -2,7 +2,7 @@
     Write a function which counts the amount of consonants in a given string.
 */
 
-function countConsonants(str) {
+function countConsonantsRound1(str: string): number {
     const formattedStr = str.toLowerCase()
         .replaceAll('a', '')
         .replaceAll('e', '')
@@ -13,6 +13,4 @@ function countConsonants(str) {
     return formattedStr.length;
 }
 
-console.log(countConsonants('Aeiou')); // 0
-console.log(countConsonants('bananas')); // 4
-console.log(countConsonants('bcdtrllkj')); // 9
+console.log(countConsonantsRound1('bcdtrllkj')); // 9

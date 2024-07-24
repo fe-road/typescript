@@ -41,6 +41,13 @@ type DutchAddressType = AddressWithZipCodeType & AddressWithFloorType;
 
 type LogLevel = 'info' | 'warn' | 'error' | 'success';
 
+enum LogLevelEnum {
+    INFO = 'info',
+    WARN = 'warning',
+    ERROR = 'error',
+    SUCCESS = 'success',
+}
+
 interface Person {
     name: string; // string | number
     age: number;
@@ -50,7 +57,8 @@ interface Person {
 
 interface Log {
     message: string;
-    level: LogLevel;
+    // level: LogLevel;
+    level: LogLevelEnum;
 }
 
 const me: Person = {
@@ -66,9 +74,17 @@ const me: Person = {
 
 const userLog: Log = {
     message: 'Ops, something went wrong!',
-    level: 'error',
+    level: LogLevelEnum.WARN,
 }
 
-if (me.address?.label) {
+if (me.address?.label) {}
 
+
+// const number = '42';
+// const another = number as number;
+
+const currentAgeValue: string = (document.querySelector('#ageInput') as HTMLInputElement).value;
+if (!isNaN(Number(currentAgeValue))) {
+    // cast to number
+    // const age = currentAgeValue as number;
 }

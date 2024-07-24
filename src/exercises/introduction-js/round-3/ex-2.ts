@@ -3,11 +3,7 @@
     and returns the name of the month associated to this number.
 */
 
-function getMonthName(monthNumber) {
-    if (monthNumber < 1 || monthNumber > 12) {
-        return 'Not valid month';
-    }
-
+function getMonthName(monthNumber: number): string {
     switch (monthNumber) {
         case 1:
             return 'January';
@@ -34,6 +30,8 @@ function getMonthName(monthNumber) {
         case 12: 
             return 'December';
     }
+
+    return 'Not valid month';
 }
 
 console.log(getMonthName(4));

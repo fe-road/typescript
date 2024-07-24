@@ -4,7 +4,7 @@
     2. Prints if the received number as parameter is odd or even
 */
 
-function isNegativeOrPositive(number) {
+function isNegativeOrPositive(number: number): void {
     if (number > 0) {
         console.log('Number is positive');
     } else if (number < 0) {
@@ -18,7 +18,7 @@ isNegativeOrPositive(7);
 isNegativeOrPositive(-3);
 isNegativeOrPositive(0);
 
-function isOddOrEven(number) {
+function isOddOrEven(number: number): void {
     if (number % 2 === 0) {
         console.log('Number is even');
     } else {

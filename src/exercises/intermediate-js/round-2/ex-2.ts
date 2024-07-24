@@ -3,7 +3,7 @@
     0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 */
 
-const fibonacci = (number) => {
+const fibonacci = (number: number): number => {
     if (number === 0) {
         return 0;
     }

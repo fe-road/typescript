@@ -3,7 +3,7 @@
     The function should merge all the arrays together and remove the duplicates.
 */
 
-const mergeArraysRemoveDuplicates = (...arrays) => {
+const mergeArraysRemoveDuplicates = <T>(...arrays: Array<Array<T>>): Array<T> => {
     const mergedArray = arrays.reduce((finalArray, currentArray) => {
         return [...finalArray, ...currentArray];
     }, []);
@@ -16,6 +16,6 @@ const mergeArraysRemoveDuplicates = (...arrays) => {
 
 const array1 = ['Yellow', 'Red', 'Green'];
 const array2 = ['Purple', 'Green', 'Blue'];
-const array3 = ['Pink', 'Yellow', 'Black', 'White']
+const array3 = ['Pink', 'Yellow', 'Black', 'White'];
 
 console.log(mergeArraysRemoveDuplicates(array1, array2, array3));

@@ -3,9 +3,9 @@
     [1,2,3,4,5] rotating by 2 should be become [4,5,1,2,3]
 */
 
-const numbers = [1, 2, 3, 4, 5];
+const numbers: Array<number> = [1, 2, 3, 4, 5];
 
-const rotateArray = (array, amount) => {
+const rotateArray = <T>(array: Array<T>, amount: number): Array<T> => {
     if (amount > array.length) {
         return array;
     }

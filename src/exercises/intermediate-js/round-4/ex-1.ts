@@ -2,8 +2,16 @@
     Create a function which merge 2 objects together.
 */
 
-const merge = (...objects) => {
-    return objects.reduce((finalObject, item) => {
+// interface PersonRound4 {
+//     name?: string;
+//     age?: number;
+//     gender?: string;
+//     occupation?: string;
+//     hobbies?: Array<string>;
+// }
+
+const merge = (...objects: any): any => {
+    return objects.reduce((finalObject: any, item: any) => {
         return { ...finalObject, ...item };
     }, {});
 };

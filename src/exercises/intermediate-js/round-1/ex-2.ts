@@ -2,7 +2,7 @@
     Write a function which returns the current date in the format DD/MM/YYYY
 */
 
-function formatCurrentDate() {
+function formatCurrentDateRound1(): string {
     const now = new Date();
 
     const date = now.getDate();
@@ -14,4 +14,4 @@ function formatCurrentDate() {
     return `${formattedDate}/${formattedMonth}/${now.getFullYear()}`;
 }
 
-console.log(formatCurrentDate());
+console.log(formatCurrentDateRound1());

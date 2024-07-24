@@ -3,8 +3,8 @@
     Name should be in uppercase
 */
 
-function sayHello(name) {
+function sayHelloRound1(name: string): void {
     console.log(`Hello ${name.toUpperCase()}`);
 }
 
-sayHello('Phellipe');
+sayHelloRound1('Phellipe');

@@ -3,7 +3,15 @@
     The function returns an object containing all the other properties of the object.
 */
 
-const returnOtherProperties = (object, ...properties) => {
+interface PersonRound4 {
+    name?: string;
+    age?: number;
+    gender?: string;
+    occupation?: string;
+    hobbies?: Array<string>;
+}
+
+const returnOtherProperties = (object: any, ...properties: Array<string>): any => {
     let cloneObject = { ...object };
     properties.forEach((prop) => {
         // delete cloneObject[prop];
@@ -13,7 +21,7 @@ const returnOtherProperties = (object, ...properties) => {
     return cloneObject;
 };
 
-const me = {
+const meRound4: PersonRound4 = {
   name: 'Phellipe Perin',
   age: 30,
   gender: 'M',

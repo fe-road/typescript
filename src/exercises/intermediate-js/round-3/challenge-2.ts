@@ -3,7 +3,11 @@
     Create a function which returns the sum of all numbers inside this matrix.
 */
 
-const matrix = [
+interface InfiniteArray {
+    [n: number]: Array<number> | InfiniteArray;
+}
+
+const matrix: InfiniteArray = [
     [
         [2, 4],
         [3, 5],
@@ -27,16 +31,16 @@ const matrix = [
 
 // Total should be 105
 
-const sumAll = (array) => {
+const sumAll = (array: InfiniteArray) => {
     let total = 0;
 
     if (Array.isArray(array[0])) {
-        array.forEach((child) => {
+        (array as Array<InfiniteArray>).forEach((child) => {
             total += sumAll(child);
         });
     } else {
-        return array.reduce((accumulator, number) => {
-            return number + accumulator;
+        return (array as Array<InfiniteArray>).reduce((accumulator, number) => {
+            return (number as unknown as number) + accumulator;
         }, 0);
     }
 

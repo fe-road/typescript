@@ -2,7 +2,7 @@
     Calculate the sum of all numbers from 1 until a given number.
 */
 
-function calculateSumOfNumbers(target, start = 1, increment = 1) {
+function calculateSumOfNumbers(target: number, start: number = 1, increment: number = 1): number {
     let sum = 0;
     for (let i = start; i <= target; i += increment) {
         sum += i;

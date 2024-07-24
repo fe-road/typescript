@@ -3,7 +3,7 @@
     The given number can't be bigger than 10000.
 */
 
-function isPrimeNumber(number) {
+function isPrimeNumber(number: number): boolean {
     if (number % 2 === 0 && number !== 2) {
         return false;
     }
@@ -21,7 +21,7 @@ function isPrimeNumber(number) {
     return true;
 }
 
-function countAllPrimeNumbersUntil(target) {
+function countAllPrimeNumbersUntil(target: number): number | string {
     if (target > 10000) {
         return 'Number not supported';
     }
@@ -36,4 +36,3 @@ function countAllPrimeNumbersUntil(target) {
     return count;
 }
 
-console.log("Count ", countAllPrimeNumbersUntil(100));

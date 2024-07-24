@@ -3,7 +3,7 @@
     Ana is X years old and Marc is Y. What's their age difference?
 */
 
-function calculateAgeDifference(age1 = 0, age2 = 0) {
+function calculateAgeDifference(age1: number = 0, age2: number = 0): number {
     return age1 - age2;
 }
 console.log("Exercise #01");
@@ -15,7 +15,7 @@ console.log(calculateAgeDifference(42, 36));
     BMI = weight / height^2
 */
 
-function calculateBMI(weight = 0, height = 0) {
+function calculateBMI(weight: number = 0, height: number = 0): number {
     const formattedHeight = height / 100;
     return weight / (formattedHeight ** 2);
 }
@@ -29,29 +29,25 @@ console.log(calculateBMI(72, 180));
     1. How many baskets I need?
     2. How many empty spots will be in the last basket?
 */
-function Holder(amountOfItems = 0, basketSize = 1) {
-    this.items = amountOfItems;
-    this.basketSize = basketSize;
+const amountOfNeededBaskets = (numberOfItems: number, basketSize: number): number => {
+    return Math.ceil(numberOfItems / basketSize);
+};
 
-    this.amountOfNeededBaskets = function() {
-        return Math.ceil(this.items / this.basketSize);
-    }
+const amountOfEmptySpotsOnLastBasket = (numberOfItems: number, basketSize: number): number => {
+    const amountOfEggsLastBasket = numberOfItems % basketSize;
+    return basketSize - amountOfEggsLastBasket;
+};
 
-    this.amountOfEmptySpotsOnLastBasket = function() {
-        const amountOfEggsLastBasket = this.items % this.basketSize;
-        return this.basketSize - amountOfEggsLastBasket;
-    }
-}
 console.log("Exercise #03");
-const holder = new Holder(80, 12);
-console.log(holder.amountOfNeededBaskets());
-console.log(holder.amountOfEmptySpotsOnLastBasket());
+// const holder = new (HolderImpl as any)(80, 12) as Holder;
+console.log(amountOfNeededBaskets(80, 12));
+console.log(amountOfEmptySpotsOnLastBasket(80, 12));
 
 /*
     Exercise #04
     Calculate the area of a circle given a certain radius
 */
-function calculateCircleArea(radius = 0) {
+function calculateCircleArea(radius: number = 0): number {
     return 3.14 * radius ** 2;
 }
 console.log("Exercise #04");
@@ -61,7 +57,12 @@ console.log(calculateCircleArea(12));
     Challenge #01
     Make a Compound interest calculator
 */
-function calculateCompoundInterest(initialAmount = 0, interestRate = 0, amountOfTimesInterestIsPaid = 12, years = 1) {
+function calculateCompoundInterest(
+    initialAmount: number = 0,
+    interestRate: number = 0,
+    amountOfTimesInterestIsPaid: number = 12,
+    years: number = 1
+): number {
     const totalOfTimesInterestPaid = amountOfTimesInterestIsPaid * years;
     const interestRatePerTime = interestRate / amountOfTimesInterestIsPaid;
 
